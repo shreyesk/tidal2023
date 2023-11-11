@@ -5,27 +5,7 @@ import CourseDetails from './component/course-info';
 import CourseSelection from './component/courses';
 import Navbar from './component/navbar';
 
-const teacherInfo = [
-  {
-    name: 'John Doe',
-    email: 'john.doe@example.com',
-  },
-  {
-    name: 'John Doe',
-    email: 'john.doe@example.com',
-  },
-];
 
-const stats = [
-  {
-    totalStudents: 50,
-    passRate: 80,
-  },
-  {
-    totalStudents: 50,
-    passRate: 80,
-  },
-];
 
 const App = () => {
   const [majors, setMajors] = useState([]);
@@ -50,14 +30,21 @@ const App = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('/courseInfo3'); // Replace with your API endpoint
+      const response = await fetch('/courseInfo3');
       const result = await response.json();
-      setSelectedCourse(result);
+  
+      // Convert result dictionary to an array
+      const selectedCourseArray = Object.entries(result).map(([code, name]) => ({
+        name,
+        code,
+      }));
+  
+      setSelectedCourse(selectedCourseArray);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
   };
-
+  
   
 
   useEffect(() => {
@@ -86,20 +73,23 @@ const App = () => {
       <body></body>
       <ChatComponent />
       <CourseSelection majors={majors} courses={courses} />
-      {/* {console.log(selectedCourse)} */}
+
+      {console.log(selectedCourse)}
       <div>
-        {selectedCourse === false ? (
+        {false ? (
           <p>Loading...</p>
         ) : (
-          <CourseDetails
-            selectedCourses={[
-              { name: selectedCourse["CSCE 121"], code: "CSCE 121" },
-              { name: selectedCourse["CSCE 221"], code: "CSCE 221" },
-            ]}
-            teacherInfo={teacherInfo}
-            stats={stats}
-          />
-        )}
+            
+            <CourseDetails
+                selectedCourses={[{ name: "Discrete Math", code: "CSCE 221" }]}
+                teacherInfo={[{ name: 'John Doe', email: 'john.doe@example.com' }]}
+                stats={[{ totalStudents: 50, passRate: 80 }]}
+                />
+
+            )
+            
+          
+        }
       </div>
     </div>
   );

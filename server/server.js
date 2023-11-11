@@ -10,6 +10,7 @@ const courseInfo = {'CSCE 110': 'Programming I', 'CSCE 111': 'Introduction to Co
 
 const courses = []
 
+
 app.get("/courseInfo", (req, res) => {
     res.json({"majors": ["Computer Science", "Computer Engineering", "Stats"] });
 });
@@ -19,12 +20,23 @@ app.get("/courseInfo2", (req, res) => {
 });
 
 app.get("/courseInfo3", (req, res) => {
-    x = {}
-   
-    for (let i = 0; i < courses.length; i++){
-        x[courses[i]] = courseInfo[courses[i]];
+    y = [[],[],[]];
+    
+
+    for (let i = 0; i < courses.length; i++) {
+        d = { code: courses[i], [courses[i]]: courseInfo[courses[i]] };
+        y[0].push(d);
+        y[1].push({
+            name: 'John Doe',
+            email: 'john.doe@example.com',
+          })
+        y[2].push({
+            totalStudents: 50,
+            passRate: 80,
+          })
     }
-    res.json(x)
+    console.log(y)
+    res.json(y)
 });
 
 app.post('/api/selectCourse', (req, res) => {
