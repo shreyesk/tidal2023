@@ -1,0 +1,43 @@
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .chat-messages {
+    overflow-y: auto;
+    max-height: 70vh;
+    width: 300px; /* You can adjust the width as needed */
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .message {
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+  }
+  
+  .user {
+    background-color: #e6e6e6;
+    align-self: flex-end;
+  }
+  
+  .chat-input {
+    display: flex;
+    width: 300px;
+  }
+  
+  input {
+    flex: 1;
+    padding: 5px;
+  }
+  
+  button {
+    padding: 5px;
+    cursor: pointer;
+  }
+  

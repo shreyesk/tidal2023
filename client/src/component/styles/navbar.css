@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+nav {
+    background-color: #739072;
+    padding: 20px;
+    text-align: center; /* Center the content horizontally */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Ensure the navbar appears above other elements */
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center the list items horizontally */
+  }
+  
+  li {
+    margin-right: 40px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px; /* Add padding to the buttons */
+    border-radius: 10px; /* Add rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition for background color change */
+  }
+  
+  a:hover {
+    background-color: #3A4D39; /* Change background color on hover */ /* Change text color on hover */
+  }
+  
+  /* Add some space at the top of the content to avoid overlapping with the fixed navbar */
+  body {
+    margin-top: 70px; /* Adjust this value based on the height of your navbar */
+  }
+  

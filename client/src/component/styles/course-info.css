@@ -1,0 +1,19 @@
+/* courseDetails.css */
+
+.CourseDetails {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    margin: auto;
+    width: 50%; /* Adjust the width as needed */
+    padding-bottom: 300px;
+  }
+
+  
+  /* Add additional styling as needed */
+  

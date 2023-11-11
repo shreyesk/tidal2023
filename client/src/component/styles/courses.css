@@ -1,0 +1,59 @@
+/* courses.css */
+
+.CourseSelection {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    
+    border-radius: 8px;
+    margin: auto;
+    padding-top: 300px;
+    padding-bottom: 300px;
+    width: 50%; /* Adjust the width as needed */
+  }
+
+label{
+    font-size: 35px;
+    color: #739072;
+    
+}
+select{
+    color: #739072;
+    font-size: 20px;
+}
+
+.selector{
+    padding-bottom: 30px;
+}
+  
+h2{
+    font-size: 60px;
+    color: #3A4D39;
+}
+
+.reset{
+    margin-top: 10px;
+    padding: 7px;
+    border-radius: 5px;
+}
+label {
+    vertical-align: middle; /* Add spacing between label and select elements */
+  }
+  
+  select {
+    vertical-align: middle;/* Add spacing between select elements and button */
+  }
+  
+  button {
+    vertical-align: middle; /* Add spacing above the button */
+  }
+  
+  .SelectedCourses {
+    text-align: left; /* Adjust the text alignment for the selected courses */
+  }
+  /* Add additional styling as needed */
+  
