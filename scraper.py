@@ -38,7 +38,9 @@ for url in urls:
 
             # Update the courses dictionary
             for course_id in courseIds:
-                courses[course_id.strip()] = className.strip()
+                if " " in course_id:
+                    
+                    courses[course_id.strip()] = className.strip()
 
             print((className))
 
