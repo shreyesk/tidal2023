@@ -1,31 +1,46 @@
-import React, { useEffect, useState } from 'react';
-import './App.css';
-function App() {
-  const [backendData, setBackendData] = useState([{}])
+// App.js
+import React from 'react';
+import "./App.css";
+import ChatComponent from './component/chat';
+import CourseDetails from './component/course-info';
+import CourseSelection from './component/courses';
+import Navbar from './component/navbar';
 
-  useEffect(() => {
-    fetch("api").then(
-      response => response.json()
+const majors = ['Computer Science', 'Mathematics', 'Physics'];
 
-    ).then(
-      data =>{
-        setBackendData(data)
-      }
-    )
-    
-  })
+const courses = {
+  'Computer Science': ['CS101', 'CS201', 'CS301'],
+  Mathematics: ['Math101', 'Math201', 'Math301'],
+  Physics: ['PHY101', 'PHY201', 'PHY301'],
+};
 
+
+const selectedCourse = {
+    name: 'Introduction to React',
+    code: 'REACT101',
+  };
+  
+  const teacherInfo = {
+    name: 'John Doe',
+    email: 'john.doe@example.com',
+  };
+  
+  const stats = {
+    totalStudents: 50,
+    passRate: 80,
+  };
+
+const App = () => {
   return (
-    <div >
-      {(typeof backendData.users === 'undefined') ? (
-        <p>Loading...</p>
-      ) : (
-        backendData.users.map((user,i) => (
-          <p key = {i}>{user}</p>
-        ))
-      )}
+    <div>
+
+      <Navbar />
+      <body></body>
+      <ChatComponent/>
+      <CourseSelection majors={majors} courses={courses}/>
+      <CourseDetails selectedCourse={selectedCourse} teacherInfo={teacherInfo} stats={stats} />
     </div>
   );
-}
+};
 
 export default App;
